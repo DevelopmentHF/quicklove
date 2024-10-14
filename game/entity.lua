@@ -21,10 +21,8 @@ function Entity:initialize(x, y, spriteRow, spriteCol, spriteWidth, spriteHeight
 end
 
 function Entity:update(dt)
-	print("Updated entity")
 end
 
 function Entity:draw()
-	print("Drawing entity")
 	love.graphics.draw(TileSheet, self.spriteQuad, self.position.x - self.spriteWidth/2, self.position.y - self.spriteHeight /2)
 end

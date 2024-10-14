@@ -3,6 +3,10 @@
 Starter project files to prototype ideas quicker. 
 Don't get bogged with boilerplate.
 
+> [!IMPORTANT]
+> This template uses [middeclass](https://github.com/kikito/middleclass?tab=readme-ov-file) for basic OOP structuring.
+> It is included in the `game/` directory by default.
+
 ## Running the development build
 
 Execute this from top-most directory
