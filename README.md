@@ -17,7 +17,7 @@ To get started, clone *this* repository, and use the following commands to extra
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/quicklove.git
+git clone git@github.com:DevelopmentHF/quicklove.git
 
 # Navigate into the quicklove folder
 cd quicklove
