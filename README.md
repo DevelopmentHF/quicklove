@@ -1,11 +1,13 @@
-# A love2d template build
+# quicklöve 
 
 Starter project files to prototype ideas quicker. 
 Don't get bogged with boilerplate.
 
+Choose from either a **top-down** or a **platformer** preset to get the simple files and structure ready for development.
+
 > [!IMPORTANT]
 > This template uses [middleclass](https://github.com/kikito/middleclass?tab=readme-ov-file) for basic OOP structuring.
-> It is included in the `game/` directory by default.
+> It is included in each `game/` directory by default.
 
 ## Running the development build
 
