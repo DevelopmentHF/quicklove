@@ -1,4 +1,4 @@
-local class = require 'middleclass'
+Class = require 'middleclass'
 require("entity")
 require("ui.button")
 

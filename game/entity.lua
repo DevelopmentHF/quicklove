@@ -1,6 +1,4 @@
-local class = require 'middleclass'
-
-Entity = class('Entity') -- Entity is our class name
+Entity = Class('Entity') -- Entity is our class name
 
 function Entity:initialize(x, y, spriteRow, spriteCol, spriteWidth, spriteHeight)
 	self.position = {

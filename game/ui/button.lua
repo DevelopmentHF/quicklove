@@ -1,6 +1,4 @@
-local class = require 'middleclass'
-
-Button = class('Button') -- Entity is our class name
+Button = Class('Button') -- Entity is our class name
     
 local font = love.graphics.getFont() -- Get the current font
 
