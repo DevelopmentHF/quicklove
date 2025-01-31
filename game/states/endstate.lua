@@ -20,7 +20,7 @@ function EndState:draw()
     love.graphics.draw(Bg)
 	love.graphics.pop()
 
-	love.graphics.setColor(1,1,1,1)
+	love.graphics.setColor(0,0,1,1)
 	if GameOverFlag then
     	love.graphics.printf("Game over!", BigFont, 0, love.graphics.getHeight() / 5, love.graphics.getWidth(), "center")
     	love.graphics.printf("[Q] to return to the main menu", Font, 0, love.graphics.getHeight() / 2, love.graphics.getWidth(), "center")

@@ -22,7 +22,7 @@ function StartState:draw()
     love.graphics.draw(Bg)
 
 
-	love.graphics.setColor(1, 1, 1, 1)
+	love.graphics.setColor(0, 0, 1, 1)
 	love.graphics.pop()
 
     love.graphics.printf("quicklove", BigFont, 0, love.graphics.getHeight() / 2, love.graphics.getWidth(), "center")

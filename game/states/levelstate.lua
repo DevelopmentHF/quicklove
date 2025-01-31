@@ -36,7 +36,7 @@ function LevelState:draw()
     end
 	
     love.graphics.pop()
-	love.graphics.setColor(0.7, 1, 0.6, 1)
+	love.graphics.setColor(0, 0, 1, 1)
     love.graphics.printf("Press [E] to end the game ", Font, 0, love.graphics.getHeight() / 2, love.graphics.getWidth(), "center")
 	love.graphics.setColor(1, 1, 1, 1)
 
