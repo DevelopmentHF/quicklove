@@ -10,6 +10,8 @@ function Entity:initialize(x, y, startFrame, endFrame, spriteRow, spriteWidth, s
 	self.spriteHeight = spriteHeight
 	
 	self.animation = Anim8.newAnimation(AnimationGrid(tostring(startFrame) .. '-' .. tostring(endFrame), spriteRow), animationDuration)
+
+	table.insert(Entities, self)
 end
 
 function Entity:update(dt)
