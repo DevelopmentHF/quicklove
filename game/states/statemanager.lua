@@ -48,6 +48,7 @@ function StateManager:update(dt)
 			--if self.nextState.number == 2 then return end
             self.currentState = self.nextState
             self.currentState:enter()  -- Enter the new state
+			self.transitionAlpha = 0
         end
     else
         if self.currentState then
@@ -62,10 +63,11 @@ function StateManager:draw()
         self.currentState:draw()
     end
 
-    -- If transitioning, draw the transition effect (e.g., a black screen that fades)
+    -- If transitioning, draw the transition effect
     if self.transitioning then
         love.graphics.setColor(0, 0, 0, self.transitionAlpha)  -- Set the transition color (black)
         love.graphics.rectangle("fill", 0, 0, love.graphics.getWidth(), love.graphics.getHeight())  -- Draw a rectangle to cover the screen
+		love.graphics.setColor(1,1,1,1)
 	else
 		love.graphics.setColor(1, 1, 1, 1)
     end
