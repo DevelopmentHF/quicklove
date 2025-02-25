@@ -32,8 +32,7 @@ function love.load()
 
     -- Initialize the StateManager and switch to the start state
 	GameOverFlag = false
-    stateManager = StateManager:new()
-    stateManager:switch(StartState:new())
+	stateManager = StateManager:new(StartState:new())
 end
 
 function love.update(dt)
