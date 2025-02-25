@@ -1,26 +1,41 @@
-Entity = Class('Entity') -- Entity is our class name
+require("core.animation")
 
-function Entity:initialize(x, y, startFrame, endFrame, spriteRow, spriteWidth, spriteHeight, animationDuration)
-	self.position = {
-		x = x,
-		y = y
-	}
+Entity = Class('Entity')
+
+function Entity:initialize(x, y, spriteWidth, spriteHeight, animations)
+	self.x = x
+	self.y = y
 
 	self.spriteWidth = spriteWidth
 	self.spriteHeight = spriteHeight
-	
-	self.animation = Anim8.newAnimation(AnimationGrid(tostring(startFrame) .. '-' .. tostring(endFrame), spriteRow), animationDuration)
 
-	table.insert(Entities, self)
+	self.animations = animations
+	self.currentAnimation = self.animations["default"]
+end
+
+function Entity:swapAnimation(name)
+	if self.animations[name] then
+		print("swapping to " .. name .. " animation")
+		self.currentAnimation = self.animations[name]
+	else
+		print("animation not found")
+	end
 end
 
 function Entity:update(dt)
-	self.animation:update(dt)
+	self.currentAnimation:update(dt)
+	
+	-- swap back to default animation at end of non-looping animation
+	if not self.currentAnimation.loop then
+		self.currentAnimation.elapsed = self.currentAnimation.elapsed + dt
+		if self.currentAnimation.elapsed > self.currentAnimation.totalDuration then
+			print("swapping to default animation")
+			self.currentAnimation.elapsed = 0
+			self.currentAnimation = self.animations["default"]
+		end
+	end
 end
 
 function Entity:draw()
-	-- not using box2d so might not have to offset
-	--love.graphics.draw(TileSheet, self.spriteQuad, self.position.x - self.spriteWidth/2, self.position.y - self.spriteHeight /2)
-	--love.graphics.draw(TileSheet, self.spriteQuad, self.position.x, self.position.y)
-	self.animation:draw(TileSheet, self.position.x, self.position.y)
+	self.currentAnimation:draw(self.x, self.y)
 end
